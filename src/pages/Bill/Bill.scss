@@ -1,0 +1,110 @@
+.bill {
+    background-color: #263238;
+    color: #D3D3D3;
+
+    &__empty {
+        text-align: center;
+
+        &-img {
+            padding-top: 20px;
+
+            img {}
+        }
+
+        &-text {
+            margin: 0;
+            padding: 20px 0;
+        }
+    }
+
+    &__container {
+        text-align: center;
+
+        .table {
+            width: 80%;
+            margin: auto;
+            position: relative;
+            background-color: #24262b;
+            padding-bottom: 100px;
+
+            &::before {
+                position: absolute;
+                content: '';
+                top: 65px;
+                left: 0;
+                width: 100%;
+                border-bottom: 3px solid #263238;
+            }
+
+            & tr th {
+                padding: 20px 0;
+                font-size: 18px;
+            }
+
+            &__title {}
+
+            &__bill {
+
+                &-detailcode {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                &-detail {
+                    color: #3a83d0;
+                    cursor: pointer;
+                    transition: .5s;
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+
+                &-return {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid red;
+                    margin: auto;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    color: red;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: .5s;
+
+                    &:hover {
+                        background-color: red;
+                        box-shadow: 0 0 15px rgba(255, 0, 0, .8);
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        &-btnback {
+            text-align: start;
+            width: 80%;
+            margin: auto;
+            padding: 40px 0;
+            a {
+                background-color: white;
+                text-decoration: none;
+                padding: 15px 30px;
+                border-style: none;
+                border-radius: 20px;
+                font-weight: bold;
+                color: black;
+                cursor: pointer;
+                transition: .5s;
+
+                &:hover {
+                    background-color: rgb(241, 33, 33);
+                    box-shadow: inset 0 0 10px 5px rgba(255, 255, 255, .3);
+                    color: white;
+                }
+            }
+        }
+    }
+}
