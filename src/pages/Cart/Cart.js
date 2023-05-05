@@ -1,4 +1,5 @@
 import Productcart from '../../components/Productcart/Productcart'
+import Popupform from '../../components/Popup/Popupform'
 import './Cart.scss'
 import imgEmpty from '../../imgs/empty/empty-cart.png'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
@@ -15,6 +16,7 @@ library.add(faBackward)
 
 
 const Cart = () => {
+    const [isClickShowForm, setIsClickShowForm] = useState(false)
     const { dataCart, setDataCart } = useContext(AppContext)
 
     const totalPriceCart = () => {
@@ -23,6 +25,10 @@ const Cart = () => {
             totalPriceProductInCart += product.price * product.soLuong
         }
         return totalPriceProductInCart
+    }
+
+    const handleOnclickShowForm = () => {
+        setIsClickShowForm(true)
     }
 
     return (
@@ -67,12 +73,13 @@ const Cart = () => {
                                     <div className='cart__footer-total'>
                                         <span className='cart__footer-label'>Total: $<span className='cart__footer-num'>{totalPriceCart().toLocaleString('en-US')}</span></span>
                                     </div>
-                                    <button>BUY</button>
+                                    <button onClick={()=>handleOnclickShowForm()}>BUY</button>
                                 </div>
                             </div>
                         </>
                 }
             </div>
+            {isClickShowForm === true && <Popupform setIsClickShowForm = {setIsClickShowForm}/>} 
         </div>
     )
 }
